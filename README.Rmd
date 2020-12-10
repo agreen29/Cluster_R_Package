@@ -1,0 +1,49 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# clust431
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of clust431 is to perform the Expectation-Maximization Algorithm on quantitative data.
+
+## Installation
+
+You can install the released version of clust431 from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("clust431")
+```
+
+```{r include = FALSE}
+library(clust431)
+```
+
+## Expectation-Maximization Function
+
+The function will perform the Expectation-Maximization Algorithm, which will find maximum-likelihood estimates for the model parameters of the clusters in the data. This is an iterative process where the function will first take random observations in the data as the starting parameters and then will continue to adjust the model to better fit the guesses of the parameters. The em_clust() function will take the arguments of a data set composed of only quantitative variables and the number of desired clusters for the data. The function will output a list of the final parameter means, variances, the final clusters each observation is assigned to, and the probabilities of cluster membership for those observations.
+
+
+Example of em_clust() function using the USArrests data set
+```{r}
+em_clust(USArrests, 4)
+```
+
+Example of the em_clust() function using the mtcars data set
+```{r}
+em_clust(mtcars, 3)
+```
+
